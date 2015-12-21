@@ -1,0 +1,23 @@
+{
+  "name": "node-iso11649",
+  "version": "1.0.0",
+  "description": "ISO 11649:2009 creditor reference library for node",
+  "main": "index.js",
+  "author": "Niko Ruotsalainen",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nruotsal/node-iso11649.git"
+  },
+  "keywords": [
+    "ISO 11649:2009",
+    "RF creditor reference",
+    "finance",
+    "banking"
+  ],
+  "bugs": {
+    "url": "https://github.com/nruotsal/node-iso11649/issues"
+  },
+  "homepage": "https://github.com/nruotsal/node-iso11649#readme"
+}
