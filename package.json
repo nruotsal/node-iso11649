@@ -22,6 +22,7 @@
   "homepage": "https://github.com/nruotsal/node-iso11649#readme",
   "scripts": {
     "test": "babel-node test/index.js | faucet",
+    "prepublish": "babel src/ -o index.js",
     "lint": "eslint src/index.js"
   },
   "devDependencies": {
