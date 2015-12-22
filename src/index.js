@@ -36,3 +36,37 @@ export const validate = (reference) => {
     && isValidFormat(normalizedRef)
     && isValidChecksum(normalizedRef)
 }
+
+export const generate = (reference) => {
+  const normalizedRef = normalizeRef(reference)
+
+  const generateRFreference = (ref) =>
+    `RF${calculateRFChecksum(ref)}${ref}`
+
+  const calculateRFChecksum = (ref) => {
+    const preResult = `${ref}RF00`.split('').map(substituteChar).join('')
+    const checksum = 98 - mod(preResult)
+    return checksum < 10 ? `0${checksum}` : checksum
+  }
+
+  const generateReference = () => {
+    const ref = ('' + Date.now())
+    const checksum = calculateChecksum(ref)
+    return `${ref}${checksum}`
+  }
+
+  const calculateChecksum = (ref) => {
+    const digits = ref.split('').reverse()
+    const multipliers = [7, 3, 1]
+    const sum = digits.map(multiply(multipliers)).reduce(toSum)
+    return (ceil10(sum) - sum) % 10
+  }
+
+  const multiply = (multipliers) => (digit, index) => digit * multipliers[index % 3]
+
+  const toSum = (prev, curr) => prev + curr
+
+  const ceil10 = (num) => Math.ceil(num / 10) * 10
+
+  return generateRFreference(normalizedRef || generateReference())
+}
