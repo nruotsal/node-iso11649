@@ -21,14 +21,15 @@
   },
   "homepage": "https://github.com/nruotsal/node-iso11649#readme",
   "scripts": {
-    "test": "babel-node test/index.js | faucet",
+    "test": "babel-tape-runner test/*.js | faucet",
     "prepublish": "babel src/ -o index.js",
-    "lint": "eslint src/index.js"
+    "lint": "eslint src/*.js"
   },
   "devDependencies": {
     "babel-cli": "6.3.17",
     "babel-eslint": "5.0.0-beta6",
     "babel-preset-es2015": "6.3.13",
+    "babel-tape-runner": "2.0.0",
     "eslint": "1.10.3",
     "eslint-config-airbnb": "2.1.1",
     "faucet": "0.0.1",
