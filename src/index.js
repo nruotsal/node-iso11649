@@ -8,7 +8,7 @@ const divider = 97
 const format = /^RF[0-9]{2}[0-9A-Z]+$/
 
 const normalizeRef = (ref) =>
-  ref ? ref.replace(/ /g, '').toUpperCase() : ''
+  ref ? ('' + ref).replace(/ /g, '').toUpperCase() : ''
 
 const substituteChar = (char) =>
   isNaN(char) ? charTable[char] : char

@@ -3,7 +3,7 @@ import {generate, validate} from '../src/index'
 
 test('should generate reference with numbers', (assert) => {
   const expected = 'RF712348231'
-  const actual = generate('2348231')
+  const actual = generate(2348231)
 
   assert.equal(actual, expected)
   assert.end()
