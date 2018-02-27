@@ -1,8 +1,7 @@
-[![CircleCI](https://circleci.com/gh/nruotsal/node-iso11649/tree/master.svg?style=svg)](https://circleci.com/gh/nruotsal/node-iso11649/tree/master)
-
 node-iso11649
 =============
 
+[![CircleCI](https://circleci.com/gh/nruotsal/node-iso11649/tree/master.svg?style=svg)](https://circleci.com/gh/nruotsal/node-iso11649/tree/master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/nruotsal/node-iso11649.svg)](https://greenkeeper.io/)
 
 ISO 11649:2009 RF creditor reference library for node
