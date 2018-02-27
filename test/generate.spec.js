@@ -25,6 +25,14 @@ test('should generate reference with zero padding', (assert) => {
   assert.end()
 })
 
+test('should generate reference from zero padded number', (assert) => {
+  const expected = 'RF7400001'
+  const actual = generate('00001')
+
+  assert.equal(actual, expected)
+  assert.end()
+})
+
 test('should generate valid reference from timestamp', (assert) => {
   const expected = true
   const actual = validate(generate())
