@@ -17,7 +17,7 @@ jobs:
           - v1-dependencies-
       - run:
           name: Install greenkeeper-lockfile
-          command: npm install -g greenkeeper-lockfile@1
+          command: sudo npm install -g greenkeeper-lockfile@1
       - run:
           name: Install dependencies
           command: npm install
