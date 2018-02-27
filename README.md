@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/nruotsal/node-iso11649/tree/master.svg?style=svg)](https://circleci.com/gh/nruotsal/node-iso11649/tree/master)
+
 node-iso11649
 =============
 
