@@ -22,7 +22,11 @@
   "scripts": {
     "test": "babel-tape-runner test/*.js | faucet",
     "prepublishOnly": "babel src/ -o index.js",
-    "lint": "eslint src/*.js test/*.js"
+    "lint": "eslint src/*.js test/*.js",
+    "release": "npm version patch -m 'Release version %s'",
+    "preversion": "npm config set tag-version-prefix ''",
+    "version": "npm publish",
+    "postversion": "git push --tags && git push"
   },
   "devDependencies": {
     "ajv": "6.2.0",
