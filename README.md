@@ -65,8 +65,15 @@ Valid RF creditor reference characteristics:
 
   npm test
 
+## Release
+
+  npm run release
+
 ## Release History
 
+* 1.1.0
+    - Update dependencies
+    - Refactor code for easier maintenance
 * 1.0.1
     - Handle number references as string
     - Update README
