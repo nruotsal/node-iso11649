@@ -71,6 +71,8 @@ Valid RF creditor reference characteristics:
 
 ## Release History
 
+* 1.1.1
+    - Bundle lib using rollup
 * 1.1.0
     - Update dependencies
     - Refactor code for easier maintenance
