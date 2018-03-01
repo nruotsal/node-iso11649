@@ -27,7 +27,7 @@
     "release": "npm version patch -m 'Release version %s'",
     "preversion": "npm config set tag-version-prefix ''",
     "version": "npm publish",
-    "postversion": "git push --tags && git push"
+    "postversion": "git push --tags"
   },
   "devDependencies": {
     "ajv": "6.2.0",
