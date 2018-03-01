@@ -20,8 +20,9 @@
   },
   "homepage": "https://github.com/nruotsal/node-iso11649#readme",
   "scripts": {
-    "test": "babel-tape-runner test/*.js | faucet",
-    "prepublishOnly": "babel src/ -o index.js",
+    "build": "BABEL_ENV=production rollup -c",
+    "test": "BABEL_ENV=test babel-tape-runner test/*.js | faucet",
+    "prepublishOnly": "npm run build",
     "lint": "eslint src/*.js test/*.js",
     "release": "npm version patch -m 'Release version %s'",
     "preversion": "npm config set tag-version-prefix ''",
@@ -32,6 +33,7 @@
     "ajv": "6.2.0",
     "babel-cli": "6.26.0",
     "babel-eslint": "8.2.2",
+    "babel-plugin-external-helpers": "6.22.0",
     "babel-preset-env": "1.6.1",
     "babel-tape-runner": "2.0.1",
     "eslint": "4.18.1",
@@ -40,6 +42,8 @@
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.7.0",
     "faucet": "0.0.1",
+    "rollup": "0.56.3",
+    "rollup-plugin-babel": "3.0.3",
     "tape": "4.9.0"
   }
 }
