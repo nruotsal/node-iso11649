@@ -1,6 +1,6 @@
 {
   "name": "node-iso11649",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "ISO 11649:2009 creditor reference library for node",
   "main": "index.js",
   "author": "Niko Ruotsalainen",
