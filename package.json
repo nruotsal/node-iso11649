@@ -30,7 +30,7 @@
     "postversion": "git push --tags"
   },
   "devDependencies": {
-    "ajv": "6.4.0",
+    "ajv": "6.5.1",
     "babel-cli": "6.26.0",
     "babel-eslint": "8.2.3",
     "babel-plugin-external-helpers": "6.22.0",
