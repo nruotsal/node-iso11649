@@ -42,7 +42,7 @@
     "eslint-plugin-jsx-a11y": "6.0.3",
     "eslint-plugin-react": "7.7.0",
     "faucet": "0.0.1",
-    "rollup": "0.58.2",
+    "rollup": "0.60.2",
     "rollup-plugin-babel": "3.0.4",
     "tape": "4.9.1"
   }
