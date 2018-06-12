@@ -44,6 +44,6 @@
     "faucet": "0.0.1",
     "rollup": "0.58.2",
     "rollup-plugin-babel": "3.0.4",
-    "tape": "4.9.0"
+    "tape": "4.9.1"
   }
 }
