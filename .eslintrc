@@ -8,6 +8,7 @@
     "no-unused-vars": 1,
     "object-curly-spacing": 0,
     "comma-dangle": 0,
-    "spaced-comment": 0
+    "spaced-comment": 0,
+    "implicit-arrow-linebreak": 0
   }
 }
