@@ -15,7 +15,7 @@ const isValidFormat = reference =>
 
 export default (reference) => {
   const normalizedRef = normalizeReference(reference)
-  return normalizedRef.length <= 25
-    && isValidFormat(normalizedRef)
-    && isValidChecksum(normalizedRef)
+  return normalizedRef.length <= 25 &&
+    isValidFormat(normalizedRef) &&
+    isValidChecksum(normalizedRef)
 }
