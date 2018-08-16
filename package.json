@@ -20,6 +20,9 @@
     "url": "https://github.com/nruotsal/node-iso11649/issues"
   },
   "homepage": "https://github.com/nruotsal/node-iso11649#readme",
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
     "build": "BABEL_ENV=production rollup -c",
     "test": "BABEL_ENV=test babel-tape-runner test/*.js | faucet",
