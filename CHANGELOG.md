@@ -2,6 +2,8 @@
 This project uses [Semantic Versioning](http://semver.org/)
 
 ## Unreleased
+
+## 1.2.0 (2018-16-08)
 - TypeScript types
 - Update dependencies
 - Changelog in separate file

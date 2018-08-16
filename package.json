@@ -23,11 +23,11 @@
   "scripts": {
     "build": "BABEL_ENV=production rollup -c",
     "test": "BABEL_ENV=test babel-tape-runner test/*.js | faucet",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run build && git add -f ./dist/index.js",
     "lint": "standard src/*.js test/*.js",
     "preversion": "npm config set tag-version-prefix ''",
     "version": "npm publish",
-    "postversion": "git push --tags"
+    "postversion": "git push --tags && git push"
   },
   "devDependencies": {
     "ajv": "6.5.2",
