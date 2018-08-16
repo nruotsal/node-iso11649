@@ -8,7 +8,7 @@ ISO 11649:2009 RF creditor reference library for node
 
 ## Installation
 
-  npm install node-iso11649 --save
+    npm install node-iso11649 --save
 
 ## Usage
 
@@ -63,8 +63,9 @@ Valid RF creditor reference characteristics:
 
 ## Tests
 
-  npm test
+    npm run lint
+    npm test
 
 ## Release
 
-  npm run release
+    npm run release
