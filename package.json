@@ -25,7 +25,6 @@
     "test": "BABEL_ENV=test babel-tape-runner test/*.js | faucet",
     "prepublishOnly": "npm run build",
     "lint": "standard src/*.js test/*.js",
-    "release": "npm version patch -m 'Release version %s'",
     "preversion": "npm config set tag-version-prefix ''",
     "version": "npm publish",
     "postversion": "git push --tags"

@@ -65,7 +65,3 @@ Valid RF creditor reference characteristics:
 
     npm run lint
     npm test
-
-## Release
-
-    npm run release
