@@ -1,5 +1,5 @@
 import test from 'tape'
-import {generate, validate} from '../src/index'
+import { generate, validate } from '../src/index'
 
 test('should generate reference with numbers', (assert) => {
   const expected = 'RF712348231'

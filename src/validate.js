@@ -1,4 +1,4 @@
-import {normalizeReference, modulo97, substituteCharWithNumber} from './common'
+import { normalizeReference, modulo97, substituteCharWithNumber } from './common'
 
 const REFERENCE_FORMAT = /^RF[0-9]{2}[0-9A-Z]+$/
 

@@ -1,5 +1,5 @@
 import test from 'tape'
-import {validate} from '../src/index'
+import { validate } from '../src/index'
 
 test('validate should return true for valid reference with numbers', (assert) => {
   const expected = true
