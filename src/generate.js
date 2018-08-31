@@ -1,4 +1,4 @@
-import {normalizeReference, modulo97, substituteCharWithNumber} from './common'
+import { normalizeReference, modulo97, substituteCharWithNumber } from './common'
 
 const ceil10 = num =>
   Math.ceil(num / 10) * 10
