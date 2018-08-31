@@ -4,24 +4,45 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 /* eslint-disable object-property-newline */
 var charTable = {
-  A: 10, B: 11, C: 12, D: 13, E: 14, F: 15, G: 16,
-  H: 17, I: 18, J: 19, K: 20, L: 21, M: 22, N: 23,
-  O: 24, P: 25, Q: 26, R: 27, S: 28, T: 29, U: 30,
-  V: 31, W: 32, X: 33, Y: 34, Z: 35
+  A: 10,
+  B: 11,
+  C: 12,
+  D: 13,
+  E: 14,
+  F: 15,
+  G: 16,
+  H: 17,
+  I: 18,
+  J: 19,
+  K: 20,
+  L: 21,
+  M: 22,
+  N: 23,
+  O: 24,
+  P: 25,
+  Q: 26,
+  R: 27,
+  S: 28,
+  T: 29,
+  U: 30,
+  V: 31,
+  W: 32,
+  X: 33,
+  Y: 34,
+  Z: 35
   /* eslint-disable object-property-newline */
 
-};var normalizeReference = function normalizeReference(reference) {
-  return reference ? ('' + reference).replace(/ /g, '').toUpperCase() : '';
 };
-
+var normalizeReference = function normalizeReference(reference) {
+  return reference ? "".concat(reference).replace(/ /g, '').toUpperCase() : '';
+};
 var substituteCharWithNumber = function substituteCharWithNumber(char) {
   return Number.isNaN(Number(char)) ? charTable[char] : char;
 };
-
 var modulo97 = function modulo97(divident) {
   var chunks = divident.match(/.{1,7}/g);
   return chunks.reduce(function (prev, curr) {
-    return ('' + prev + curr) % 97;
+    return "".concat(prev).concat(curr) % 97;
   }, '');
 };
 
@@ -47,19 +68,19 @@ var calculateChecksum = function calculateChecksum(reference) {
 };
 
 var generateReference = function generateReference() {
-  var reference = '' + Date.now();
+  var reference = "".concat(Date.now());
   var checksum = calculateChecksum(reference);
-  return '' + reference + checksum;
+  return "".concat(reference).concat(checksum);
 };
 
 var calculateRFChecksum = function calculateRFChecksum(reference) {
-  var preResult = (reference + 'RF00').split('').map(substituteCharWithNumber).join('');
+  var preResult = "".concat(reference, "RF00").split('').map(substituteCharWithNumber).join('');
   var checksum = 98 - modulo97(preResult);
-  return checksum < 10 ? '0' + checksum : checksum;
+  return checksum < 10 ? "0".concat(checksum) : checksum;
 };
 
 var generateRFreference = function generateRFreference(reference) {
-  return 'RF' + calculateRFChecksum(reference) + reference;
+  return "RF".concat(calculateRFChecksum(reference)).concat(reference);
 };
 
 var generate = (function (reference) {

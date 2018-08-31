@@ -1,13 +1,12 @@
 {
   "env": {
     "test": {
-      "presets": ["env"]
+      "presets": ["@babel/env"]
     },
     "production": {
       "presets": [
-        ["env", {"modules": false}]
-      ],
-      "plugins": ["external-helpers"]
+        ["@babel/env", {"modules": false}]
+      ]
     }
   }
 }
