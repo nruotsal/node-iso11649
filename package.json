@@ -36,7 +36,7 @@
     "@babel/core": "7.2.2",
     "@babel/preset-env": "7.2.0",
     "@babel/register": "7.0.0",
-    "ajv": "6.6.1",
+    "ajv": "6.6.2",
     "faucet": "0.0.1",
     "rollup": "0.68.0",
     "rollup-plugin-babel": "4.1.0",
