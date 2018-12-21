@@ -2,7 +2,7 @@
   "name": "node-iso11649",
   "version": "1.2.2",
   "description": "ISO 11649:2009 creditor reference library for node",
-  "main": "dist/index.js",
+  "main": "dist/index.ts",
   "typings": "dist/types.d.ts",
   "author": "Niko Ruotsalainen",
   "license": "MIT",
@@ -25,23 +25,30 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "BABEL_ENV=production rollup -c",
-    "test": "BABEL_ENV=test tape -r @babel/register test/*.js | faucet",
+    "build": "rollup -c",
+    "test": "ts-node ./node_modules/.bin/tape test/*.ts | faucet",
     "prepublishOnly": "npm run build && git add -f ./dist/index.js",
-    "lint": "standard src/*.js test/*.js",
+    "lint": "npx eslint --ext .ts src/* test/*",
     "preversion": "npm config set tag-version-prefix ''",
     "version": "npm publish",
     "postversion": "git push --tags && git push"
   },
   "devDependencies": {
-    "@babel/core": "7.7.5",
-    "@babel/preset-env": "7.7.6",
-    "@babel/register": "7.7.4",
-    "ajv": "6.10.2",
+    "@types/tape": "4.2.33",
+    "@typescript-eslint/eslint-plugin": "2.11.0",
+    "eslint": "6.7.2",
+    "eslint-config-standard-with-typescript": "11.0.1",
+    "eslint-plugin-import": "2.19.1",
+    "eslint-plugin-node": "10.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "eslint-plugin-typescript": "0.14.0",
     "faucet": "0.0.1",
     "rollup": "1.27.13",
-    "rollup-plugin-babel": "4.3.3",
-    "standard": "14.3.1",
-    "tape": "4.11.0"
+    "rollup-plugin-typescript": "1.0.1",
+    "tape": "4.11.0",
+    "ts-node": "8.5.4",
+    "tslib": "1.10.0",
+    "typescript": "3.7.3"
   }
 }

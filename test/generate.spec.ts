@@ -1,15 +1,15 @@
-import test from 'tape'
+import * as test from 'tape'
 import { generate, validate } from '../src/index'
 
-test('should generate reference with numbers', (assert) => {
+test('should generate reference with numbers', (assert: test.Test) => {
   const expected = 'RF712348231'
-  const actual = generate(2348231)
+  const actual = generate('2348231')
 
   assert.equal(actual, expected)
   assert.end()
 })
 
-test('should generate reference with characters', (assert) => {
+test('should generate reference with characters', (assert: test.Test) => {
   const expected = 'RF19AB2G59X56V543'
   const actual = generate('AB2G5 9X56 V543')
 
@@ -17,7 +17,7 @@ test('should generate reference with characters', (assert) => {
   assert.end()
 })
 
-test('should generate reference with zero padding', (assert) => {
+test('should generate reference with zero padding', (assert: test.Test) => {
   const expected = 'RF097'
   const actual = generate('7')
 
@@ -25,7 +25,7 @@ test('should generate reference with zero padding', (assert) => {
   assert.end()
 })
 
-test('should generate reference from zero padded number', (assert) => {
+test('should generate reference from zero padded number', (assert: test.Test) => {
   const expected = 'RF7400001'
   const actual = generate('00001')
 
@@ -33,7 +33,7 @@ test('should generate reference from zero padded number', (assert) => {
   assert.end()
 })
 
-test('should generate valid reference from timestamp', (assert) => {
+test('should generate valid reference from timestamp', (assert: test.Test) => {
   const expected = true
   const actual = validate(generate())
 
