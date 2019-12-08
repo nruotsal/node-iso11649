@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.7.5",
-    "@babel/preset-env": "7.6.2",
+    "@babel/preset-env": "7.7.6",
     "@babel/register": "7.6.2",
     "ajv": "6.10.2",
     "faucet": "0.0.1",
