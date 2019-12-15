@@ -1,7 +1,9 @@
 # Changelog
 This project uses [Semantic Versioning](http://semver.org/)
 
-## Unreleased
+## 1.2.2 (2019-15-12)
+- Update dependencies
+- Build with latest Babel
 
 ## 1.2.1 (2018-16-08)
 - Include only dist folder in npm package
