@@ -30,14 +30,14 @@ var charTable = {
   X: 33,
   Y: 34,
   Z: 35
-  /* eslint-disable object-property-newline */
-
 };
+/* eslint-disable object-property-newline */
+
 var normalizeReference = function normalizeReference(reference) {
   return reference ? "".concat(reference).replace(/ /g, '').toUpperCase() : '';
 };
-var substituteCharWithNumber = function substituteCharWithNumber(char) {
-  return Number.isNaN(Number(char)) ? charTable[char] : char;
+var substituteCharWithNumber = function substituteCharWithNumber(_char) {
+  return Number.isNaN(Number(_char)) ? charTable[_char] : _char;
 };
 var modulo97 = function modulo97(divident) {
   var chunks = divident.match(/.{1,7}/g);
