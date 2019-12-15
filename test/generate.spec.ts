@@ -17,15 +17,7 @@ test('should generate reference with characters', (assert: test.Test) => {
   assert.end()
 })
 
-test('should generate reference with zero padding', (assert: test.Test) => {
-  const expected = 'RF097'
-  const actual = generate('7')
-
-  assert.equal(actual, expected)
-  assert.end()
-})
-
-test('should generate reference from zero padded number', (assert: test.Test) => {
+test('should generate reference with zero padded number', (assert: test.Test) => {
   const expected = 'RF7400001'
   const actual = generate('00001')
 
