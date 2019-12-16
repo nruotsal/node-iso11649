@@ -42,6 +42,6 @@
     "rollup": "1.27.13",
     "rollup-plugin-babel": "4.3.3",
     "standard": "14.3.1",
-    "tape": "4.11.0"
+    "tape": "4.12.0"
   }
 }
