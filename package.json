@@ -34,7 +34,7 @@
     "postversion": "git push --tags && git push"
   },
   "devDependencies": {
-    "@babel/core": "7.7.5",
+    "@babel/core": "7.7.7",
     "@babel/preset-env": "7.7.6",
     "@babel/register": "7.7.4",
     "ajv": "6.10.2",
