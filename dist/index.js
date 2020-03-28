@@ -30,17 +30,18 @@ var toSum = function (prev, curr) {
 var multiplyWith = function (multipliers) {
     return function (digit, index) { return digit * multipliers[index % 3]; };
 };
-var calculateChecksum = function (reference) {
+var calculateFinnishChecksum = function (reference) {
     var digits = reference.split('').map(Number).reverse();
     var multipliers = [7, 3, 1];
     var sum = digits.map(multiplyWith(multipliers)).reduce(toSum);
     return (ceil10(sum) - sum) % 10;
 };
-var generateReference = function () {
+var generateFinnishReference = function () {
     var reference = "" + Date.now();
-    var checksum = calculateChecksum(reference);
+    var checksum = calculateFinnishChecksum(reference);
     return "" + reference + checksum;
 };
+
 var calculateRFChecksum = function (reference) {
     var preResult = (reference + "RF00").split('').map(substituteCharWithNumber).join('');
     var checksum = 98 - modulo97(preResult);
@@ -50,9 +51,9 @@ var generateRFreference = function (reference) {
     return "RF" + calculateRFChecksum(reference) + reference;
 };
 var generate = (function (reference) {
-    var normalizedReference = typeof reference !== 'undefined'
-        ? normalizeReference(reference)
-        : generateReference();
+    var normalizedReference = typeof reference === 'undefined'
+        ? generateFinnishReference()
+        : normalizeReference(reference);
     return generateRFreference(normalizedReference);
 });
 
