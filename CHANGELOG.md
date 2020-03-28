@@ -1,6 +1,12 @@
 # Changelog
 This project uses [Semantic Versioning](http://semver.org/)
 
+## 2.0.2 (2020-28-03)
+- Remove unnecessary dependency
+
+## 2.0.1 (2020-28-03)
+- Fix main entrypoint
+
 ## 2.0.0 (2020-28-03)
 - Rewrite with TypeScript
 
