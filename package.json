@@ -2,7 +2,7 @@
   "name": "node-iso11649",
   "version": "2.0.0",
   "description": "ISO 11649:2009 creditor reference library for node",
-  "main": "dist/index.ts",
+  "main": "dist/index.js",
   "typings": "dist/types.d.ts",
   "author": "Niko Ruotsalainen",
   "license": "MIT",
