@@ -32,3 +32,24 @@ test('should generate valid reference from timestamp', (assert: test.Test) => {
   assert.equal(actual, expected)
   assert.end()
 })
+
+test('should generate pretty reference with numbers', (assert: test.Test) => {
+  const expected = 'RF71 2348 231'
+  const actual = generate({
+    reference: '2348231',
+    pretty: true
+  })
+
+  assert.equal(actual, expected)
+  assert.end()
+})
+
+test('should generate pretty reference from timestamp', (assert: test.Test) => {
+  const expected = true
+  const actual = validate(generate({
+    pretty: true
+  }))
+
+  assert.equal(actual, expected)
+  assert.end()
+})
