@@ -1,6 +1,10 @@
 # Changelog
 This project uses [Semantic Versioning](http://semver.org/)
 
+## 2.1.0 (2020-30-03)
+- [Add parse function](https://github.com/nruotsal/node-iso11649/pull/150) by [davidknezic](https://github.com/davidknezic)
+- [Add pretty print](https://github.com/nruotsal/node-iso11649/pull/149) by [davidknezic](https://github.com/davidknezic)
+
 ## 2.0.2 (2020-28-03)
 - Remove unnecessary dependency
 
