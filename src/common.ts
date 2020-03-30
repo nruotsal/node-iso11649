@@ -1,3 +1,5 @@
+const REFERENCE_FORMAT: RegExp = /^RF[0-9]{2}[0-9A-Z]+$/
+
 interface CharTable {
   [key: string]: number
 }
@@ -23,3 +25,19 @@ export const modulo97 = (dividend: string): number => {
     ? chunks.map(Number).reduce((prev: number, curr: number) => parseInt(`${prev}${curr}`) % 97, 0)
     : -1
 }
+
+export const moveRfToEnd = (reference: string): string[] =>
+  (reference.substr(4) + reference.substr(0, 4)).split('')
+
+export const isValidChecksum = (reference: string): boolean => {
+  const preResult = moveRfToEnd(reference).map(substituteCharWithNumber).join('')
+  return modulo97(preResult) === 1
+}
+
+export const isValidFormat = (reference: string): boolean =>
+  reference.match(REFERENCE_FORMAT) !== null
+
+export const isValid = (reference: string): boolean =>
+  reference.length <= 25 &&
+    isValidFormat(reference) &&
+    isValidChecksum(reference)

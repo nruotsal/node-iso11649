@@ -74,6 +74,27 @@ Valid RF creditor reference characteristics:
   // => false
 ```
 
+### Parsing RF creditor reference
+
+The reference part can be extracted from the RF creditor reference.
+This validates the entered RF creditor reference according to the
+'Validating RF creditor reference'. It returns the reference string
+if valid and null if invalid.
+
+```
+  import {parse} from 'node-iso11649'
+
+  console.log(parse('RF47 1450 8655 4228 64'))
+  // => 14508655422864
+```
+
+```
+  import {parse} from 'node-iso11649'
+
+  console.log(parse('RF00TEST'))
+  // => null
+```
+
 ## Tests
 
     npm run lint
