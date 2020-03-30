@@ -40,6 +40,19 @@ Example of the result in the time of writing this.
   // => RF4714508655422864
 ```
 
+As creditor references are commonly displayed in groups of 4 characters
+you can use the optional `pretty` flag to format the returned value.
+
+```
+  import {generate} from 'node-iso11649'
+
+  console.log(generate({
+    reference: '12345 12345',
+    pretty: true
+  }))
+  // => RF45 1234 5123 45
+```
+
 ### Validating RF creditor reference
 
 Valid RF creditor reference characteristics:
