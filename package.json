@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@types/tape": "4.2.34",
-    "@typescript-eslint/eslint-plugin": "2.25.0",
+    "@typescript-eslint/eslint-plugin": "2.26.0",
     "eslint": "6.8.0",
     "eslint-config-standard-with-typescript": "15.0.1",
     "eslint-plugin-import": "2.20.2",
