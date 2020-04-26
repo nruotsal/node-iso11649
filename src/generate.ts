@@ -19,8 +19,8 @@ interface GenerateOptions {
   pretty?: boolean
 }
 
-function generate (reference?: string): string;
-function generate (options: GenerateOptions): string;
+function generate (reference?: string): string
+function generate (options: GenerateOptions): string
 function generate (options?: any): string {
   let reference: string | undefined
   let pretty: boolean = false
