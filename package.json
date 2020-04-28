@@ -1,6 +1,6 @@
 {
   "name": "node-iso11649",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "ISO 11649:2009 creditor reference library for node",
   "main": "dist/index.js",
   "typings": "dist/types.d.ts",

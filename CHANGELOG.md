@@ -1,6 +1,9 @@
 # Changelog
 This project uses [Semantic Versioning](http://semver.org/)
 
+## 2.1.1 (2020-28-04)
+- [Fix types](https://github.com/nruotsal/node-iso11649/pull/170) by [davidknezic](https://github.com/davidknezic)
+
 ## 2.1.0 (2020-30-03)
 - [Add parse function](https://github.com/nruotsal/node-iso11649/pull/150) by [davidknezic](https://github.com/davidknezic)
 - [Add pretty print](https://github.com/nruotsal/node-iso11649/pull/149) by [davidknezic](https://github.com/davidknezic)
