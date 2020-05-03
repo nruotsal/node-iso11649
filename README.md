@@ -2,7 +2,7 @@ node-iso11649
 =============
 
 [![CircleCI](https://circleci.com/gh/nruotsal/node-iso11649/tree/master.svg?style=svg)](https://circleci.com/gh/nruotsal/node-iso11649/tree/master)
-
+[![Known Vulnerabilities](https://snyk.io/test/github/nruotsal/node-iso11649/badge.svg)](https://snyk.io/test/github/nruotsal/node-iso11649)
 
 ISO 11649:2009 RF creditor reference library for node
 
