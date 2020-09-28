@@ -40,3 +40,11 @@ test('should validate 26 char long reference to false', (assert: test.Test) => {
   assert.equal(actual, expected)
   assert.end()
 })
+
+test('should validate reference with zero on start of 7 char chunk to true', (assert: test.Test) => {
+  const expected = true
+  const actual = validate('RF02 4020 5100 2913 3')
+
+  assert.equal(actual, expected)
+  assert.end()
+})

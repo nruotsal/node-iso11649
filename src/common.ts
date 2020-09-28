@@ -22,7 +22,7 @@ export const substituteCharWithNumber = (char: string): string | number =>
 export const modulo97 = (dividend: string): number => {
   const chunks = dividend.match(/.{1,7}/g)
   return chunks !== null
-    ? chunks.map(Number).reduce((prev: number, curr: number) => parseInt(`${prev}${curr}`) % 97, 0)
+    ? chunks.reduce((prev: number, curr: string) => parseInt(`${prev}${curr}`) % 97, 0)
     : -1
 }
 
