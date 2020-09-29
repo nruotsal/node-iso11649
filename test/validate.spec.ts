@@ -17,6 +17,14 @@ test('should validate reference with zero padded reference to true', (assert: te
   assert.end()
 })
 
+test('should validate reference with incorrect checksum range to false', (assert: test.Test) => {
+  const expected = false
+  const actual = validate('RF99 4020 5100 2913 3')
+
+  assert.equal(actual, expected)
+  assert.end()
+})
+
 test('should validate reference with characters to true', (assert: test.Test) => {
   const expected = true
   const actual = validate('RF19 AB2G 59X5 6V54 3')

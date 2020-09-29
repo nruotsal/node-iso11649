@@ -31,9 +31,14 @@ var isValidChecksum = function (reference) {
 var isValidFormat = function (reference) {
     return reference.match(REFERENCE_FORMAT) !== null;
 };
+var isValidChecksumRange = function (reference) {
+    var checkSum = Number(reference.substr(2, 2));
+    return checkSum >= 2 && checkSum <= 98;
+};
 var isValid = function (reference) {
     return reference.length <= 25 &&
         isValidFormat(reference) &&
+        isValidChecksumRange(reference) &&
         isValidChecksum(reference);
 };
 
