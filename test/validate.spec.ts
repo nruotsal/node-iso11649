@@ -9,6 +9,14 @@ test('should validate reference with numbers to true', (assert: test.Test) => {
   assert.end()
 })
 
+test('should validate reference with zero padded reference to true', (assert: test.Test) => {
+  const expected = true
+  const actual = validate('RF33 0000 0000 0000 0234 8236')
+
+  assert.equal(actual, expected)
+  assert.end()
+})
+
 test('should validate reference with characters to true', (assert: test.Test) => {
   const expected = true
   const actual = validate('RF19 AB2G 59X5 6V54 3')

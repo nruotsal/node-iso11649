@@ -18,7 +18,7 @@ var substituteCharWithNumber = function (char) {
 var modulo97 = function (dividend) {
     var chunks = dividend.match(/.{1,7}/g);
     return chunks !== null
-        ? chunks.map(Number).reduce(function (prev, curr) { return parseInt("" + prev + curr) % 97; }, 0)
+        ? chunks.reduce(function (prev, curr) { return parseInt("" + prev + curr) % 97; }, 0)
         : -1;
 };
 var moveRfToEnd = function (reference) {
