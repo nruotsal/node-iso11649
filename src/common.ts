@@ -22,7 +22,7 @@ export const substituteCharWithNumber = (char: string): string | number =>
 export const modulo97 = (dividend: string): number => {
   const chunks = dividend.match(/.{1,7}/g)
   return chunks !== null
-    ? chunks.map(Number).reduce((prev: number, curr: number) => parseInt(`${prev}${curr}`) % 97, 0)
+    ? chunks.reduce((prev: number, curr: string) => parseInt(`${prev}${curr}`) % 97, 0)
     : -1
 }
 
@@ -37,7 +37,13 @@ export const isValidChecksum = (reference: string): boolean => {
 export const isValidFormat = (reference: string): boolean =>
   reference.match(REFERENCE_FORMAT) !== null
 
+export const isValidChecksumRange = (reference: string): boolean => {
+  const checkSum = Number(reference.substr(2, 2))
+  return checkSum >= 2 && checkSum <= 98
+}
+
 export const isValid = (reference: string): boolean =>
   reference.length <= 25 &&
     isValidFormat(reference) &&
+    isValidChecksumRange(reference) &&
     isValidChecksum(reference)

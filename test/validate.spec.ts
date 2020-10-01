@@ -9,6 +9,22 @@ test('should validate reference with numbers to true', (assert: test.Test) => {
   assert.end()
 })
 
+test('should validate reference with zero padded reference to true', (assert: test.Test) => {
+  const expected = true
+  const actual = validate('RF33 0000 0000 0000 0234 8236')
+
+  assert.equal(actual, expected)
+  assert.end()
+})
+
+test('should validate reference with incorrect checksum range to false', (assert: test.Test) => {
+  const expected = false
+  const actual = validate('RF99 4020 5100 2913 3')
+
+  assert.equal(actual, expected)
+  assert.end()
+})
+
 test('should validate reference with characters to true', (assert: test.Test) => {
   const expected = true
   const actual = validate('RF19 AB2G 59X5 6V54 3')
@@ -36,6 +52,14 @@ test('should validate 25 char long reference to true', (assert: test.Test) => {
 test('should validate 26 char long reference to false', (assert: test.Test) => {
   const expected = false
   const actual = validate('RF43 1234 5678 9012 3456 7890 12')
+
+  assert.equal(actual, expected)
+  assert.end()
+})
+
+test('should validate reference with zero on start of 7 char chunk to true', (assert: test.Test) => {
+  const expected = true
+  const actual = validate('RF02 4020 5100 2913 3')
 
   assert.equal(actual, expected)
   assert.end()
