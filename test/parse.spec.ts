@@ -1,4 +1,4 @@
-import * as test from 'tape'
+import test from 'tape'
 import { parse } from '../src/index'
 
 test('should parse reference with numbers', (assert: test.Test) => {

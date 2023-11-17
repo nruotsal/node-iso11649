@@ -25,30 +25,30 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "rollup -c",
-    "test": "ts-node ./node_modules/.bin/tape test/*.ts | faucet",
+    "build": "rollup -c && rm -rf ./dist/types",
+    "test": "tape -r ts-node/register/transpile-only test/*.ts | faucet",
     "prepublishOnly": "npm run build && git add -f ./dist/index.js",
-    "lint": "npx eslint --ext .ts src/* test/*",
+    "lint": "eslint --ext .ts src/* test/*",
     "preversion": "npm config set tag-version-prefix ''",
     "version": "npm publish",
     "postversion": "git push --tags && git push"
   },
   "devDependencies": {
-    "@types/tape": "4.13.0",
-    "@typescript-eslint/eslint-plugin": "4.4.1",
-    "eslint": "7.11.0",
-    "eslint-config-standard-with-typescript": "19.0.1",
-    "eslint-plugin-import": "2.22.1",
+    "@rollup/plugin-typescript": "11.1.5",
+    "@types/tape": "5.6.4",
+    "@typescript-eslint/eslint-plugin": "6.11.0",
+    "eslint": "8.53.0",
+    "eslint-config-standard-with-typescript": "39.1.1",
+    "eslint-plugin-import": "2.29.0",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.1",
-    "eslint-plugin-typescript": "0.14.0",
-    "faucet": "0.0.1",
-    "rollup": "2.32.0",
-    "rollup-plugin-typescript": "1.0.1",
-    "tape": "5.0.1",
-    "ts-node": "9.0.0",
-    "tslib": "2.0.3",
-    "typescript": "4.0.3"
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-standard": "4.1.0",
+    "faucet": "0.0.4",
+    "rollup": "4.4.1",
+    "rollup-plugin-dts": "6.1.0",
+    "tape": "5.7.2",
+    "ts-node": "10.9.1",
+    "tslib": "2.6.2",
+    "typescript": "5.2.2"
   }
 }

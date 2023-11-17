@@ -1,8 +1,6 @@
 const REFERENCE_FORMAT: RegExp = /^RF[0-9]{2}[0-9A-Z]+$/
 
-interface CharTable {
-  [key: string]: number
-}
+type CharTable = Record<string, number>
 
 /* eslint-disable object-property-newline */
 const charTable: CharTable = {
@@ -17,7 +15,7 @@ export const normalizeReference = (reference: string): string =>
   (`${reference}`).replace(/ /g, '').toUpperCase()
 
 export const substituteCharWithNumber = (char: string): string | number =>
-  (Number.isNaN(Number(char)) ? charTable[char] : char)
+  (Number.isNaN(Number(char)) ? charTable[char] ?? '' : char)
 
 export const modulo97 = (dividend: string): number => {
   const chunks = dividend.match(/.{1,7}/g)
@@ -27,7 +25,7 @@ export const modulo97 = (dividend: string): number => {
 }
 
 export const moveRfToEnd = (reference: string): string[] =>
-  (reference.substr(4) + reference.substr(0, 4)).split('')
+  (reference.slice(4) + reference.slice(0, 4)).split('')
 
 export const isValidChecksum = (reference: string): boolean => {
   const preResult = moveRfToEnd(reference).map(substituteCharWithNumber).join('')

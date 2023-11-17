@@ -1,4 +1,4 @@
-import * as test from 'tape'
+import test from 'tape'
 import { validate } from '../src/index'
 
 test('should validate reference with numbers to true', (assert: test.Test) => {

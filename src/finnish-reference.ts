@@ -13,7 +13,7 @@ const toSum = (prev: number, curr: number): number =>
   prev + curr
 
 const multiplyWith = (multipliers: number[]) =>
-  (digit: number, index: number) => digit * multipliers[index % 3]
+  (digit: number, index: number) => digit * (multipliers[index % 3] ?? 0)
 
 const calculateFinnishChecksum = (reference: string): number => {
   const digits = reference.split('').map(Number).reverse()
@@ -33,7 +33,7 @@ const isValidFormat = (reference: string): boolean =>
 
 const isValidChecksum = (reference: string): boolean => {
   const checksum = Number(reference.slice(-1))
-  const base = reference.substr(0, reference.length - 1)
+  const base = reference.slice(0, reference.length - 1)
   return checksum === calculateFinnishChecksum(base)
 }
 
