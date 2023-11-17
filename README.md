@@ -59,10 +59,7 @@ you can use the optional `pretty` flag to format the returned value.
 ```js
 import {generate} from 'node-iso11649'
 
-console.log(generate({
-  reference: '12345 12345',
-  pretty: true
-}))
+console.log(generate('12345 12345', {pretty: true}))
 // => RF45 1234 5123 45
 ```
 

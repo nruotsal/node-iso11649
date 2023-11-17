@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var REFERENCE_FORMAT = /^RF[0-9]{2}[0-9A-Z]+$/;
 var charTable = {
     A: 10, B: 11, C: 12, D: 13, E: 14, F: 15, G: 16,
@@ -10,19 +8,17 @@ var charTable = {
     V: 31, W: 32, X: 33, Y: 34, Z: 35
 };
 var normalizeReference = function (reference) {
-    return ("" + reference).replace(/ /g, '').toUpperCase();
+    return ("".concat(reference)).replace(/ /g, '').toUpperCase();
 };
-var substituteCharWithNumber = function (char) {
-    return (Number.isNaN(Number(char)) ? charTable[char] : char);
-};
+var substituteCharWithNumber = function (char) { var _a; return (Number.isNaN(Number(char)) ? (_a = charTable[char]) !== null && _a !== void 0 ? _a : '' : char); };
 var modulo97 = function (dividend) {
     var chunks = dividend.match(/.{1,7}/g);
     return chunks !== null
-        ? chunks.reduce(function (prev, curr) { return parseInt("" + prev + curr) % 97; }, 0)
+        ? chunks.reduce(function (prev, curr) { return parseInt("".concat(prev).concat(curr)) % 97; }, 0)
         : -1;
 };
 var moveRfToEnd = function (reference) {
-    return (reference.substr(4) + reference.substr(0, 4)).split('');
+    return (reference.slice(4) + reference.slice(0, 4)).split('');
 };
 var isValidChecksum = function (reference) {
     var preResult = moveRfToEnd(reference).map(substituteCharWithNumber).join('');
@@ -49,7 +45,7 @@ var toSum = function (prev, curr) {
     return prev + curr;
 };
 var multiplyWith = function (multipliers) {
-    return function (digit, index) { return digit * multipliers[index % 3]; };
+    return function (digit, index) { var _a; return digit * ((_a = multipliers[index % 3]) !== null && _a !== void 0 ? _a : 0); };
 };
 var calculateFinnishChecksum = function (reference) {
     var digits = reference.split('').map(Number).reverse();
@@ -58,51 +54,39 @@ var calculateFinnishChecksum = function (reference) {
     return (ceil10(sum) - sum) % 10;
 };
 var generateFinnishReference = function () {
-    var reference = "" + Date.now();
+    var reference = "".concat(Date.now());
     var checksum = calculateFinnishChecksum(reference);
-    return "" + reference + checksum;
+    return "".concat(reference).concat(checksum);
 };
 
 var calculateRFChecksum = function (reference) {
-    var preResult = (reference + "RF00").split('').map(substituteCharWithNumber).join('');
+    var preResult = "".concat(reference, "RF00").split('').map(substituteCharWithNumber).join('');
     var checksum = 98 - modulo97(preResult);
-    return checksum < 10 ? "0" + checksum : "" + checksum;
+    return checksum < 10 ? "0".concat(checksum) : "".concat(checksum);
 };
 var generateRFreference = function (reference) {
-    return "RF" + calculateRFChecksum(reference) + reference;
+    return "RF".concat(calculateRFChecksum(reference)).concat(reference);
 };
 var prettyFormatRFreference = function (reference) {
     return reference.replace(/(.{4})(?!$)/g, '$1 ');
 };
-function generate(options) {
-    var reference;
-    var pretty = false;
-    if (typeof options === 'string') {
-        reference = options;
-    }
-    else if (typeof options === 'object') {
-        reference = options.reference;
-        pretty = options.pretty === true;
-    }
-    else {
-        reference = undefined;
-    }
-    var normalizedReference = typeof reference === 'undefined'
+function generate(reference, options) {
+    var normalizedReference = reference === undefined
         ? generateFinnishReference()
         : normalizeReference(reference);
     var rfReference = generateRFreference(normalizedReference);
-    return pretty
+    return (options === null || options === void 0 ? void 0 : options.pretty) === true
         ? prettyFormatRFreference(rfReference)
         : rfReference;
 }
 
-var validate = (function (reference) {
+function validate(reference) {
     var normalizedRef = normalizeReference(reference);
     return isValid(normalizedRef);
-});
+}
 
 function removeRf(reference) {
-    return reference.substr(4);
+    return reference.slice(4);
 }
 function parse(reference) {
     var normalizedRef = normalizeReference(reference);
