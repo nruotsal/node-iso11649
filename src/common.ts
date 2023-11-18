@@ -36,7 +36,7 @@ export const isValidFormat = (reference: string): boolean =>
   reference.match(REFERENCE_FORMAT) !== null
 
 export const isValidChecksumRange = (reference: string): boolean => {
-  const checkSum = Number(reference.substr(2, 2))
+  const checkSum = Number(reference.slice(2, 4))
   return checkSum >= 2 && checkSum <= 98
 }
 

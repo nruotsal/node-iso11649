@@ -25,7 +25,7 @@ test('should generate reference with zero padded number', (assert: test.Test) =>
   assert.end()
 })
 
-test('should generate valid reference from timestamp', (assert: test.Test) => {
+test('should generate valid semi random reference', (assert: test.Test) => {
   const expected = true
   const actual = validate(generate())
 
@@ -41,7 +41,7 @@ test('should generate pretty reference with numbers', (assert: test.Test) => {
   assert.end()
 })
 
-test('should generate pretty reference from timestamp', (assert: test.Test) => {
+test('should generate pretty semi random reference', (assert: test.Test) => {
   const expected = true
   const actual = validate(generate(undefined, { pretty: true }))
 

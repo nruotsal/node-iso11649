@@ -43,8 +43,12 @@ console.log(generate('12345 12345'))
 ```
 
 RF creditor reference can be generated also without existing reference.
-In that case epoch timestamp with finnish checksum at the end is used.
-Example of the result in the time of writing this.
+In that case epoch timestamp increased with random number and finnish checksum at the end is used.
+
+**NOTE**: While this provides some level of randomness, uniqueness is not guaranteed.
+In production, it is best to use cryptographically secure random numbers at least as a part of the reference.
+
+Example result:
 
 ```js
 import {generate} from 'node-iso11649'
