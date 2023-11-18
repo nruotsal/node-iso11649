@@ -12,12 +12,12 @@ ISO 11649:2009 RF creditor reference library for node
 
 ## Installation
 
-With NPM
+with NPM
 ```sh
 npm install node-iso11649 --save
 ```
 
-With Yarn
+with Yarn
 ```sh
 yarn add node-iso11649
 ```
@@ -36,7 +36,7 @@ Existing reference characteristics:
  * Can be string with spaces (example '12345 12345' => RF451234512345).
 
 ```js
-import {generate} from 'node-iso11649'
+import { generate } from 'node-iso11649'
 
 console.log(generate('12345 12345'))
 // => RF451234512345
@@ -51,7 +51,7 @@ In production, it is best to use cryptographically secure random numbers at leas
 Example result:
 
 ```js
-import {generate} from 'node-iso11649'
+import { generate } from 'node-iso11649'
 
 console.log(generate())
 // => RF4714508655422864
@@ -61,7 +61,7 @@ As creditor references are commonly displayed in groups of 4 characters
 you can use the optional `pretty` flag to format the returned value.
 
 ```js
-import {generate} from 'node-iso11649'
+import { generate } from 'node-iso11649'
 
 console.log(generate('12345 12345', {pretty: true}))
 // => RF45 1234 5123 45
@@ -75,14 +75,14 @@ Valid RF creditor reference characteristics:
  * Reference part must follow rules described in 'Existing reference characteristics' section.
 
 ```js
-import {validate} from 'node-iso11649'
+import { validate } from 'node-iso11649'
 
 console.log(validate('RF4714508655422864'))
 // => true
 ```
 
 ```js
-import {validate} from 'node-iso11649'
+import { validate } from 'node-iso11649'
 
 console.log(validate('RF00TEST'))
 // => false
@@ -96,14 +96,14 @@ This validates the entered RF creditor reference according to the
 if valid and null if invalid.
 
 ```js
-import {parse} from 'node-iso11649'
+import { parse } from 'node-iso11649'
 
 console.log(parse('RF47 1450 8655 4228 64'))
 // => 14508655422864
 ```
 
 ```js
-import {parse} from 'node-iso11649'
+import { parse } from 'node-iso11649'
 
 console.log(parse('RF00TEST'))
 // => null
