@@ -1,6 +1,15 @@
 # Changelog
 This project uses [Semantic Versioning](http://semver.org/)
 
+## 3.0.0 (2023-18-11)
+**BREAKING**: Change generate function signature to have separate parameters for reference and options
+
+- Improve randomness and uniqueness of RF references generated without existing reference
+- Update dependencies
+- Replace deprecated `substr` with `slice`
+- Rollup type declaration file
+- Improve documentation
+
 ## 2.1.2 (2020-01-10)
 - [Fix modulo calculation](https://github.com/nruotsal/node-iso11649/pull/180) by [Tol1](https://github.com/Tol1)
 

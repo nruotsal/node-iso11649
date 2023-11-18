@@ -28,7 +28,7 @@ var isValidFormat = function (reference) {
     return reference.match(REFERENCE_FORMAT) !== null;
 };
 var isValidChecksumRange = function (reference) {
-    var checkSum = Number(reference.substr(2, 2));
+    var checkSum = Number(reference.slice(2, 4));
     return checkSum >= 2 && checkSum <= 98;
 };
 var isValid = function (reference) {
@@ -54,7 +54,8 @@ var calculateFinnishChecksum = function (reference) {
     return (ceil10(sum) - sum) % 10;
 };
 var generateFinnishReference = function () {
-    var reference = "".concat(Date.now());
+    var random = Math.floor(Math.random() * 1e10);
+    var reference = "".concat(Date.now() + random);
     var checksum = calculateFinnishChecksum(reference);
     return "".concat(reference).concat(checksum);
 };
